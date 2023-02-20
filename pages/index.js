@@ -14,6 +14,11 @@ export default function Home() {
 					<a href="https://github.com/zaiquiriw"> github </a> to
 					see what I've done in the meantime.
 				</p>
+				<p>
+					All you need to know is I'm a passionate programmer, hoping to create
+					ml models on the edge for my career. I also have interest in 
+					full stack app development, keyboard design, and environmental conservation.
+				</p>
 			</section>
 		</Layout>
 	)
