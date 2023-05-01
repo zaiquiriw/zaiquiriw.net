@@ -14,10 +14,7 @@ const navItems = {
   },
   '/blog': {
     name: 'blog',
-  },
-  '/guestbook': {
-    name: 'guestbook',
-  },
+  }
 };
 
 function Logo() {
