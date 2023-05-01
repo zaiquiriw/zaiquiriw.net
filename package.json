@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "build-only": "next build",
-    "start": "next start -p 80",
+    "start": "next start -p 8080",
     "setup": "node ./lib/setup.mjs"
   },
   "dependencies": {
