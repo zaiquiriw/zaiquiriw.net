@@ -3,7 +3,9 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Sidebar from '../components/sidebar';
-import { Analytics } from '@vercel/analytics/react';
+
+const baseURL = process.env.DOMAIN_NAME;
+
 
 const kaisei = localFont({
   src: '../public/fonts/kaisei-tokumin-latin-700-normal.woff2',
@@ -12,20 +14,22 @@ const kaisei = localFont({
   display: 'swap',
 });
 
+// https://beta.nextjs.org/docs/api-reference/metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: 'ZaiquiriW',
+    template: '%s @ Zaiq',
   },
-  description: 'Developer, writer, and creator.',
+  metadataBase: new URL('https://zaiquiriw.com'),
+  description: 'Zaiquiri',
   openGraph: {
-    title: 'Lee Robinson',
-    description: 'Developer, writer, and creator.',
-    url: 'https://leerob.io',
-    siteName: 'Lee Robinson',
+    title: 'ZaiquiriW\'s Portfolio',
+    description: '',
+    url: '/',
+    siteName: 'ZaiquiriW',
     images: [
       {
-        url: 'https://leerob.io/og.jpg',
+        url: '/og.jpg',
         width: 1920,
         height: 1080,
       },
@@ -45,15 +49,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'ZaiquiriW',
     card: 'summary_large_image',
   },
   icons: {
     shortcut: '/favicon.ico',
   },
   verification: {
-    google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-    yandex: '14d2e73487fa6c71',
+    // TODO: Will setup verification later
   },
 };
 
@@ -74,7 +77,6 @@ export default function RootLayout({
         <Sidebar />
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">
           {children}
-          <Analytics />
         </main>
       </body>
     </html>
